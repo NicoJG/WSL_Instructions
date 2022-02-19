@@ -208,6 +208,8 @@ To look good, you first have to customize Windows Terminal
 - restart the shell (by using `exec zsh`)
 - you need to copy all customizations you did to the `~/.bashrc` to `~/.zshrc`! Because the bashrc won't be run anymore.
 
+For a few tips and tricks on using Zsh: https://www.twilio.com/blog/zsh-tricks-to-blow-your-mind
+
 # Styling Zsh with Powerlevel10k
 
 Powerlevel10k is not necessary, you could choose a theme shipped with Oh My Zsh (`agnoster` or look at https://github.com/ohmyzsh/ohmyzsh/wiki/Themes)
