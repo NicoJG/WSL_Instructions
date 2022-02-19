@@ -210,7 +210,7 @@ To look good, you first have to customize Windows Terminal
 
 # Styling Zsh with Powerlevel10k
 
-Powerlevel10k is not necessary, you could choose a theme shipped with Oh My Zsh (https://github.com/ohmyzsh/ohmyzsh/wiki/Themes)
+Powerlevel10k is not necessary, you could choose a theme shipped with Oh My Zsh (`agnoster` or look at https://github.com/ohmyzsh/ohmyzsh/wiki/Themes)
 But I really like Powerlevel10k.
 
 - Install Powerlevel10k: 
@@ -227,7 +227,8 @@ But I really like Powerlevel10k.
     POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS
     POWERLEVEL9K_TIME_FORMAT
     ```
-- Choose plugins for Zsh (in `~/.zshrc`) (https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins or somewhere else via google)
+- Choose plugins for Zsh (in `~/.zshrc`) 
+  - https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins or somewhere else via google
   - a few suggestions to look into:
     ```
     git
@@ -245,8 +246,9 @@ But I really like Powerlevel10k.
 
 # Updating
 
-## Powerlevel10k
+- most of it: `sudo apt update && sudo apt upgrade`
+- Anaconda: `conda update anaconda`
+- TexLive: `tlmgr update --self --all --reinstall-forcibly-removed`
+- Powerlevel10k: `git -C ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k pull`
 
-`git -C ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k pull`
 
-Powerlevel10k or 9k
