@@ -187,17 +187,17 @@ Once it is configured properly it looks amazing and has man convenient tools.
 To look good, you first have to customize Windows Terminal
  
 - Choose a color scheme from https://windowsterminalthemes.dev/ 
- - I like "Solarized Dark Higher Contrast" (https://windowsterminalthemes.dev/?theme=Solarized%20Dark%20Higher%20Contrast)
- - click on "Get Theme"
- - in Windows Terminal->Settings click "Open JSON file"
- - paste the color scheme after `"schemes": [` and add a `,` after the closing `}` (then save)
-  - potentially change "background" to black (`#000000`) 
- - make the chosen color scheme the default for Ubuntu (in Settings->Ubuntu->Appearance)
+  - I like "Solarized Dark Higher Contrast" (https://windowsterminalthemes.dev/?theme=Solarized%20Dark%20Higher%20Contrast)
+  - click on "Get Theme"
+  - in Windows Terminal->Settings click "Open JSON file"
+  - paste the color scheme after `"schemes": [` and add a `,` after the closing `}` (then save)
+    - potentially change "background" to black (`#000000`) 
+  - make the chosen color scheme the default for Ubuntu (in Settings->Ubuntu->Appearance)
 - choose a background image and make it ~30% opaque (in Settings->Ubuntu->Appearance) (for example https://en.wikipedia.org/wiki/Helix_Nebula#/media/File:NGC7293_(2004).jpg)
 - Change the "Bell notification style" to not audible (in Settings->Ubuntu->Advanced)
 - Install a "Nerd Font" from https://www.nerdfonts.com/font-downloads 
- - I like "DejaVuSansMono NF" (`DejaVu Sans Mono Nerd Font Complete Windows Compatible.ttf`)
- - Set the Font for the Ubuntu profile (in Settings->Ubuntu->Appearance)
+  - I like "DejaVuSansMono NF" (`DejaVu Sans Mono Nerd Font Complete Windows Compatible.ttf`)
+  - Set the Font for the Ubuntu profile (in Settings->Ubuntu->Appearance)
 
  
 ## Installing Oh My Zsh
@@ -231,7 +231,7 @@ But I really like Powerlevel10k.
   - a few suggestions to look into:
     ```
     git
-    colorize
+    colorize (with alias cat="ccat")
     command-not-found 
     conda-zsh-completion
     vscode
