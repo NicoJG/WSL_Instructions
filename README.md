@@ -1,2 +1,126 @@
-# WSL_Instructions
-Just a collection of installation instructions (or bug fixes) for Tools like Python, Latex, C++ on Windows via WSL
+# What is this?
+
+This is a collection of instructions to install and configure the tools I use for development/data science/physics ...
+I use WSL on Windows 11 to use things like Python, Latex, Git, C++, ...
+Most of this comes from the Pep Toolbox-Workshop (https://toolbox.pep-dortmund.org/) other things come from personal experience. 
+This collection is mainly for myself, so that I have everything I need at one place, but I guess it could be useful for other people too. 
+And most of it should work on native Ubuntu or Linux too.
+
+# Installation Instructions (mainly on Windows 11 + WSL)
+
+Preferably use Windows Terminal and Visual Studio Code for everything.
+
+## WSL and Ubuntu
+
+- Open Windows Terminal (PowerShell) as an Administrator
+- enter `wsl --install -d Ubuntu`
+- after successfull completion, restart your computer
+- enter a username and password for the Ubuntu login
+- Update the packages via `sudo apt update && sudo apt upgrade`
+- Optional: Set Ubuntu as the default shell in Windows Terminal
+
+For more info:
+https://docs.microsoft.com/de-de/windows/wsl/install 
+If you are having Connection issues and using Avast: https://github.com/MicrosoftDocs/WSL/issues/481
+
+### Useful/Essential Linux Tools
+
+Install each via `sudo apt install <Name>`
+
+-> `sudo apt install git make curl`
+
+- make
+- curl
+- git
+
+## Visual Studio Code
+
+Download VSCode from here: https://code.visualstudio.com/ 
+Or if you are worried about privacy, open source, tracking... use VSCodium from here: https://vscodium.com/ 
+And then install it.
+
+It's best to always open VS Code via the Ubuntu shell: `code <Path>` (or `codium <Path>`)
+-> this will run VS Code with "Remote for WSL" and it will use WSL for Python etc.
+
+Recommended Settings (in VSCode->File->Preferences->Settings):
+- English as Language
+- Word Wrap as "always" 
+
+Recommended VS Code Extensions:
+- Rainbow CSV
+- vscode-pdf
+- Python
+- C/C++
+- LaTeX Workshop (disable auto compile!)
+  - in VSCode->File->Preferences->Settings:  
+  - search for "latex auto build clean and retry" and remove the checkmark
+  - search for "latex auto build run" and set it to "never"
+
+
+## Python (Scientific Python via Anaconda)
+
+- Go to https://www.anaconda.com/products/individual
+- Copy the link adress of the Linux(!) "64-Bit (x86) Installer"
+- Download the Installer: `wget -O ~/Anaconda-Installer.sh <Copied-Link-Adress>`
+  - For example: `wget -O ~/Anaconda-Installer.sh https://repo.anaconda.com/archive/Anaconda3-2021.11-Linux-x86_64.sh`
+- Install Anaconda via `bash ~/Anaconda-Installer.sh -b -p ~/.local/anaconda3`
+  - `-b` is for batch-mode so that the `~/.bashrc` does not get cluttered
+  - `-p` is to specify where Anaconda should be installed to
+- Remove the Installer: `rm ~/Anaconda-Installer.sh`
+- To automatically activate Anaconda (i.e. Python) add the following lines at the end of you `~/.bashrc` file:
+```
+# Python/Anaconda:
+. "$HOME/.local/anaconda3/etc/profile.d/conda.sh"
+conda activate
+```
+  - You could for example open it with `code ~/.bashrc`
+
+### Useful Python Packages not in Anaconda
+
+- Uncertainties: `pip install uncertainties`
+
+## Latex (with TexLive)
+
+- Warning: This installation takes a long time because TexLive is a large package (~5GB)
+- Download and extract the TexLive Installer: `cd ~ && curl -L http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz | tar xz`
+- Install TexLive: `TEXLIVE_INSTALL_PREFIX=$HOME/.local/texlive ~/install-tl-*/install-tl`
+  - Start the Installation using the option `I`
+- Remove the installer: `rm -rf ~/install-tl-*`
+- Add the following to your `~/.bashrc` file: 
+```
+# LaTeX/TexLive:
+export PATH="$HOME/.local/texlive/2021/bin/x86_64-linux:$PATH"
+```
+  - You may need to adjust the path (i.e. the year)
+- restart your terminal (or use `source ~/.bashrc`)
+- adjust the config: `tlmgr option autobackup -- -1` and `tlmgr option repository http://mirror.ctan.org/systems/texlive/tlnet`
+
+## C++ 
+
+- see: https://code.visualstudio.com/docs/cpp/config-wsl 
+- or better use a Makefile
+
+- to install Eigen:
+  - `sudo apt install libeigen3-dev`
+  - now it could be included with `#include <eigen3/Eigen/Dense>`
+  - if you want to include it with `#include <Eigen/Dense>` you need to create a symbolical link: `sudo ln -s /usr/include/eigen3/Eigen /usr/include/Eigen`
+
+## Git configuration (for GitHub)
+
+- Git has to be installed: `sudo apt install git`
+- recommended configuration (as commands):
+```
+git config --global user.name "Max Mustermann"
+git config --global user.email "max.mustermann@email-provider.com"
+git config --global rebase.stat true
+git config --global merge.conflictstyle diff3
+```
+- You need to use a SSH key for GitHub:
+  - https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh
+
+
+## Useful Windows Configurations
+
+in the Windows Explorer, configure:
+- show file extensions
+- show hidden files/folders
