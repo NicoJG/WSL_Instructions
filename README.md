@@ -233,7 +233,6 @@ But I really like Powerlevel10k.
     git
     colorize (with alias cat="ccat")
     command-not-found 
-    conda-zsh-completion
     vscode
     lol
     zsh-interactive-cd
@@ -241,10 +240,7 @@ But I really like Powerlevel10k.
   - recommended plugins that are not included in Oh My Zsh (don't forget so change the `~/.zshrc`):
     - zsh-autosuggestions: `git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions`
     - zsh-syntax-highlighting: `git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting`
-- Powerlevel10k is fully customizable, a few recommendations (added to `~/zshrc`):
-```
-
-```
+    - conda-zsh-completion
 
 
 # Updating
