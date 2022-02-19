@@ -169,10 +169,11 @@ At the moment Jupyter is buggy and won't open right.
 For more information: https://stackoverflow.com/a/65133953 
 For Jupyter Notebook just replace every "Lab" with a "Notebook"
 
-- Generate the config file `jupyter lab --generate-config`
-- Add the following line to `~/.jupyter/jupyter_notebook_config.py`: `c.LabApp.open_browser = False`
-- If the bug mentioned in https://github.com/jupyterlab/jupyterlab/issues/10413 will eventually be fixed use `c.ServerApp.use_redirect_file = False` in `~/.jupyter/jupyter_server_config.py`
-
+- Generate the config file `jupyter server --generate-config`
+- Add the following line to `~/.jupyter/jupyter_server_config.py`: `c.ServerApp.use_redirect_file = False`
+  - if this does not work, try the following (see https://github.com/jupyterlab/jupyterlab/issues/10413):
+  - Generate the config file `jupyter lab --generate-config`
+  - Add the following line to `~/.jupyter/jupyter_notebook_config.py`: `c.LabApp.open_browser = False`
 
 # Terminal Customizations
  
