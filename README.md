@@ -70,11 +70,11 @@ Recommended VS Code Extensions:
   - `-p` is to specify where Anaconda should be installed to
 - Remove the Installer: `rm ~/Anaconda-Installer.sh`
 - To automatically activate Anaconda (i.e. Python) add the following lines at the end of you `~/.bashrc` file:
-```
-# Python/Anaconda:
-. "$HOME/.local/anaconda3/etc/profile.d/conda.sh"
-conda activate
-```
+  ```
+  # Python/Anaconda:
+  . "$HOME/.local/anaconda3/etc/profile.d/conda.sh"
+  conda activate
+  ```
   - You could for example open it with `code ~/.bashrc`
 
 ### Useful Python Packages not in Anaconda
@@ -89,10 +89,10 @@ conda activate
   - Start the Installation using the option `I`
 - Remove the installer: `rm -rf ~/install-tl-*`
 - Add the following to your `~/.bashrc` file: 
-```
-# LaTeX/TexLive:
-export PATH="$HOME/.local/texlive/2021/bin/x86_64-linux:$PATH"
-```
+  ```
+  # LaTeX/TexLive:
+  export PATH="$HOME/.local/texlive/2021/bin/x86_64-linux:$PATH"
+  ```
   - You may need to adjust the path (i.e. the year)
 - restart your terminal (or use `source ~/.bashrc`)
 - adjust the config: `tlmgr option autobackup -- -1` and `tlmgr option repository http://mirror.ctan.org/systems/texlive/tlnet`
@@ -111,12 +111,12 @@ export PATH="$HOME/.local/texlive/2021/bin/x86_64-linux:$PATH"
 
 - Git has to be installed: `sudo apt install git`
 - recommended configuration (as commands):
-```
-git config --global user.name "Max Mustermann"
-git config --global user.email "max.mustermann@email-provider.com"
-git config --global rebase.stat true
-git config --global merge.conflictstyle diff3
-```
+  ```
+  git config --global user.name "Max Mustermann"
+  git config --global user.email "max.mustermann@email-provider.com"
+  git config --global rebase.stat true
+  git config --global merge.conflictstyle diff3
+  ```
 - You need to use a SSH key for GitHub (https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh):
   - Create SSH-Key: `ssh-keygen -t ed25519 -C "max.mustermann@email-provider.com"`
   - Use the default path
@@ -145,24 +145,24 @@ You need a XServer.
   -  You may (or must perhaps) reject the firewall permissions that should pop up
 - `mkdir /tmp/vcxsrv` 
 - Add the following to your `~/.bashrc`:
-```
-# XServer/VcXsrv:
-export DISPLAY=$(route.exe print | grep 0.0.0.0 | head -1 | awk '{print $4}'):0.0
-export XDG_RUNTIME_DIR="/tmp/vcxsrv"
-export LIBGL_ALWAYS_INDIRECT=1
-```
-  - if this does not work try `export DISPLAY='grep -oP "(?<=nameserver ).+" /etc/resolv.conf':0.0` or `export DISPLAY=localhost:0.0`
+  ```
+  # XServer/VcXsrv:
+  export DISPLAY=$(route.exe print | grep 0.0.0.0 | head -1 | awk '{print $4}'):0.0
+  export XDG_RUNTIME_DIR="/tmp/vcxsrv"
+  export LIBGL_ALWAYS_INDIRECT=1
+  ```
+    - if this does not work try `export DISPLAY='grep -oP "(?<=nameserver ).+" /etc/resolv.conf':0.0` or `export DISPLAY=localhost:0.0`
 
-- Optional: to be able to start the XServer from the command line `check_xsrv`, add the following to your `~/.bashrc`:
-```
-# open vcxsrv if it is not running
-open_vcxsrv() {
-    if ! cmd.exe /c tasklist | grep --quiet vcxsrv; then
-        cmd.exe /c "C:\Users\Nico\Documents\config.xlaunch"
-    fi
-}
-alias check_xsrv=open_vcxsrv
-```
+  - Optional: to be able to start the XServer from the command line `check_xsrv`, add the following to your `~/.bashrc`:
+  ```
+  # open vcxsrv if it is not running
+  open_vcxsrv() {
+      if ! cmd.exe /c tasklist | grep --quiet vcxsrv; then
+          cmd.exe /c "C:\Users\Nico\Documents\config.xlaunch"
+      fi
+  }
+  alias check_xsrv=open_vcxsrv
+  ```
 
 ## Jupyter Lab/Jupyter Notebook on WSL
 
@@ -221,23 +221,23 @@ But I really like Powerlevel10k.
   - (https://github.com/romkatv/powerlevel10k#oh-my-zsh)
 - Powerlevel10k is fully customizable (look into `~/.p10k.zsh`)
   - a few suggestions to look into:
-```
-POWERLEVEL9K_SHORTEN_DIR_LENGTH
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS
-POWERLEVEL9K_TIME_FORMAT
-```
-- Choose plugins of for Zsh (in `~/.zshrc`) (https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins or somewhere else via google)
+    ```
+    POWERLEVEL9K_SHORTEN_DIR_LENGTH
+    POWERLEVEL9K_LEFT_PROMPT_ELEMENTS
+    POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS
+    POWERLEVEL9K_TIME_FORMAT
+    ```
+- Choose plugins for Zsh (in `~/.zshrc`) (https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins or somewhere else via google)
   - a few suggestions to look into:
-  ```
-  git
-  colorize
-  command-not-found 
-  conda-zsh-completion
-  vscode
-  lol
-  zsh-interactive-cd
-  ```
+    ```
+    git
+    colorize
+    command-not-found 
+    conda-zsh-completion
+    vscode
+    lol
+    zsh-interactive-cd
+    ```
   - recommended plugins that are not included in Oh My Zsh (don't forget so change the `~/.zshrc`):
     - zsh-autosuggestions: `git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions`
     - zsh-syntax-highlighting: `git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting`
