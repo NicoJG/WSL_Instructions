@@ -128,3 +128,49 @@ git config --global merge.conflictstyle diff3
 in the Windows Explorer, configure:
 - show file extensions
 - show hidden files/folders
+
+
+# WSL Bug fixes / workarounds
+
+## Graphical Interfaces don't work (for example matplotlib)
+
+Should not be necessary for Windows 11 but on Windows 10 it was necessary.
+You need a XServer.
+
+- Install VcXsrv (https://sourceforge.net/projects/vcxsrv/)
+- in Windows search for XLaunch and choose the following configurations:
+  -  Multiple Windows, Start no client, all extra settings, save configuration
+  -  You may (or must perhaps) reject the firewall permissions that should pop up
+- `mkdir /tmp/vcxsrv` 
+- Add the following to your `~/.bashrc`:
+```
+# XServer/VcXsrv:
+export DISPLAY=$(route.exe print | grep 0.0.0.0 | head -1 | awk '{print $4}'):0.0
+export XDG_RUNTIME_DIR="/tmp/vcxsrv"
+export LIBGL_ALWAYS_INDIRECT=1
+```
+  - if this does not work try `export DISPLAY='grep -oP "(?<=nameserver ).+" /etc/resolv.conf':0.0` or `export DISPLAY=localhost:0.0`
+
+- Optional: to be able to start the XServer from the command line `check_xsrv`, add the following to your `~/.bashrc`:
+```
+# open vcxsrv if it is not running
+open_vcxsrv() {
+    if ! cmd.exe /c tasklist | grep --quiet vcxsrv; then
+        cmd.exe /c "C:\Users\Nico\Documents\config.xlaunch"
+    fi
+}
+alias check_xsrv=open_vcxsrv
+```
+
+## Jupyter Lab/Jupyter Notebook on WSL
+
+At the moment Jupyter is buggy and won't open right. 
+For more information: https://stackoverflow.com/a/65133953 
+For Jupyter Notebook just replace every "Lab" with a "Notebook"
+
+- Generate the config file `jupyter lab --generate-config`
+- Add the following line to `~/.jupyter/jupyter_notebook_config.py`: `c.LabApp.open_browser = False`
+- If the bug mentioned in https://github.com/jupyterlab/jupyterlab/issues/10413 will eventually be fixed use `c.ServerApp.use_redirect_file = False` in `~/.jupyter/jupyter_server_config.py`
+
+
+ 
