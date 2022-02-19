@@ -181,14 +181,8 @@ For Jupyter Notebook just replace every "Lab" with a "Notebook"
 The default terminal (Windows Terminal + Bash) is fine, but you can do so much more. 
 I like to use zsh with oh-my-zsh (https://github.com/ohmyzsh/ohmyzsh). 
 Once it is configured properly it looks amazing and has man convenient tools.
- 
-## Installing Oh My Zsh
- 
-- Install Zsh: `sudo apt install zsh`
-- Make Zsh your default shell: `chsh -s $(which zsh)` (restart the terminal)
-- Install OhMyZsh: `sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
- 
-## Customize Windows Terminal
+
+q## Customize Windows Terminal
  
 - Choose a color scheme from https://windowsterminalthemes.dev/ 
  - I like "Solarized Dark Higher Contrast" (https://windowsterminalthemes.dev/?theme=Solarized%20Dark%20Higher%20Contrast)
@@ -199,6 +193,16 @@ Once it is configured properly it looks amazing and has man convenient tools.
  - Set the Font for the Ubuntu profile in the Windows Terminal settings
 - change the "bellStyle" to "none" so that the error sound does not pop up all the time
 - change the background to black and transparent, and add a background image (for example https://en.wikipedia.org/wiki/Helix_Nebula#/media/File:NGC7293_(2004).jpg)
+
+ 
+## Installing Oh My Zsh
+ 
+- Install Zsh: `sudo apt install zsh`
+- Make Zsh your default shell: `chsh -s $(which zsh)` (restart the terminal)
+- Install OhMyZsh: `sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
+
+# Styling Oh
+ 
 
 
 
