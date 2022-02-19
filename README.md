@@ -56,6 +56,7 @@ Recommended VS Code Extensions:
   - in VSCode->File->Preferences->Settings:  
   - search for "latex auto build clean and retry" and remove the checkmark
   - search for "latex auto build run" and set it to "never"
+- Visual Studio Live Share
 
 
 ## Python (Scientific Python via Anaconda)
