@@ -173,7 +173,7 @@ For Jupyter Notebook just replace every "Lab" with a "Notebook"
 - Add the following line to `~/.jupyter/jupyter_server_config.py`: `c.ServerApp.use_redirect_file = False`
   - if this does not work, try the following (see https://github.com/jupyterlab/jupyterlab/issues/10413):
   - Generate the config file `jupyter lab --generate-config`
-  - Add the following line to `~/.jupyter/jupyter_notebook_config.py`: `c.LabApp.open_browser = False`
+  - Add the following line to `~/.jupyter/jupyter_lab_config.py`: `c.LabApp.open_browser = False`
 
 # Terminal Customizations
  
