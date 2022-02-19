@@ -242,6 +242,7 @@ But I really like Powerlevel10k.
     - zsh-autosuggestions: `git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions`
     - zsh-syntax-highlighting: `git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting`
     - conda-zsh-completion
+- Oh My Zsh also has many customizations (look into `~/.zshrc`)
 
 
 # Updating
