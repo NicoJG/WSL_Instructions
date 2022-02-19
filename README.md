@@ -47,6 +47,7 @@ Recommended Settings (in VSCode->File->Preferences->Settings):
 - Word Wrap as "always" 
 
 Recommended VS Code Extensions:
+- Remote - WSL
 - Rainbow CSV
 - vscode-pdf
 - Python
