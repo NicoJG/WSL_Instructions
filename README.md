@@ -179,7 +179,8 @@ For Jupyter Notebook just replace every "Lab" with a "Notebook"
 # Terminal Customizations
  
 The default terminal (Windows Terminal + Bash) is fine, but you can do so much more. 
-I like to use zsh with oh-my-zsh (https://github.com/ohmyzsh/ohmyzsh).
+I like to use zsh with oh-my-zsh (https://github.com/ohmyzsh/ohmyzsh). 
+Once it is configured properly it looks amazing and has man convenient tools.
  
 ## Installing Oh My Zsh
  
