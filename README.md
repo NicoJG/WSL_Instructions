@@ -182,30 +182,75 @@ The default terminal (Windows Terminal + Bash) is fine, but you can do so much m
 I like to use zsh with oh-my-zsh (https://github.com/ohmyzsh/ohmyzsh). 
 Once it is configured properly it looks amazing and has man convenient tools.
 
-## Customize Windows Terminal
+## Customize your terminal (Windows Terminal)
 
 To look good, you first have to customize Windows Terminal
  
 - Choose a color scheme from https://windowsterminalthemes.dev/ 
  - I like "Solarized Dark Higher Contrast" (https://windowsterminalthemes.dev/?theme=Solarized%20Dark%20Higher%20Contrast)
- - Add the color scheme to Windows Terminal in the Settings
- - Change the Ubuntu profile in the Windows Terminal Settings to use this color scheme
+ - click on "Get Theme"
+ - in Windows Terminal->Settings click "Open JSON file"
+ - paste the color scheme after `"schemes": [` and add a `,` after the closing `}` (then save)
+  - potentially change "background" to black (`#000000`) 
+ - make the chosen color scheme the default for Ubuntu (in Settings->Ubuntu->Appearance)
+- choose a background image and make it ~30% opaque (in Settings->Ubuntu->Appearance) (for example https://en.wikipedia.org/wiki/Helix_Nebula#/media/File:NGC7293_(2004).jpg)
+- Change the "Bell notification style" to not audible (in Settings->Ubuntu->Advanced)
 - Install a "Nerd Font" from https://www.nerdfonts.com/font-downloads 
- - I like "DejaVuSansMono NF"
- - Set the Font for the Ubuntu profile in the Windows Terminal settings
-- change the "bellStyle" to "none" so that the error sound does not pop up all the time
-- change the background to black and transparent, and add a background image (for example https://en.wikipedia.org/wiki/Helix_Nebula#/media/File:NGC7293_(2004).jpg)
+ - I like "DejaVuSansMono NF" (`DejaVu Sans Mono Nerd Font Complete Windows Compatible.ttf`)
+ - Set the Font for the Ubuntu profile (in Settings->Ubuntu->Appearance)
 
  
 ## Installing Oh My Zsh
  
 - Install Zsh: `sudo apt install zsh`
-- Make Zsh your default shell: `chsh -s $(which zsh)` (restart the terminal)
+- Make Zsh your default shell: `chsh -s $(which zsh)`
 - Install OhMyZsh: `sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
+- restart the shell (by using `exec zsh`)
+- you need to copy all customizations you did to the `~/.bashrc` to `~/.zshrc`!
 
-# Styling Oh
- 
+# Styling Zsh with Powerlevel10k
+
+Powerlevel10k is not necessary, you could choose a theme shipped with Oh My Zsh (https://github.com/ohmyzsh/ohmyzsh/wiki/Themes)
+But I really like Powerlevel10k.
+
+- Install Powerlevel10k: 
+  - `git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k` 
+  - Set `ZSH_THEME="powerlevel10k/powerlevel10k"` in `~/.zshrc`
+  - `exec zsh`
+  - Follow the configuration wizard (`p10k configure`) which should show up (You should have already installed a Nerd Font!)
+  - (https://github.com/romkatv/powerlevel10k#oh-my-zsh)
+- Powerlevel10k is fully customizable (look into `~/.p10k.zsh`)
+  - a few suggestions to look into:
+```
+POWERLEVEL9K_SHORTEN_DIR_LENGTH
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS
+POWERLEVEL9K_TIME_FORMAT
+```
+- Choose plugins of for Zsh (in `~/.zshrc`) (https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins or somewhere else via google)
+  - a few suggestions to look into:
+  ```
+  git
+  colorize
+  command-not-found 
+  conda-zsh-completion
+  vscode
+  lol
+  zsh-interactive-cd
+  ```
+  - recommended plugins that are not included in Oh My Zsh (don't forget so change the `~/.zshrc`):
+    - zsh-autosuggestions: `git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions`
+    - zsh-syntax-highlighting: `git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting`
+- Powerlevel10k is fully customizable, a few recommendations (added to `~/zshrc`):
+```
+
+```
 
 
+# Updating
+
+## Powerlevel10k
+
+`git -C ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k pull`
 
 Powerlevel10k or 9k
