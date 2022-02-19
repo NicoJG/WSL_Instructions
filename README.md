@@ -206,7 +206,7 @@ To look good, you first have to customize Windows Terminal
 - Make Zsh your default shell: `chsh -s $(which zsh)`
 - Install OhMyZsh: `sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
 - restart the shell (by using `exec zsh`)
-- you need to copy all customizations you did to the `~/.bashrc` to `~/.zshrc`!
+- you need to copy all customizations you did to the `~/.bashrc` to `~/.zshrc`! Because the bashrc won't be run anymore.
 
 # Styling Zsh with Powerlevel10k
 
