@@ -116,7 +116,7 @@ git config --global rebase.stat true
 git config --global merge.conflictstyle diff3
 ```
 - You need to use a SSH key for GitHub (https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh):
-  - SSH-Key erzeugen: `ssh-keygen -t ed25519 -C "max.mustermann@email-provider.com"`
+  - Create SSH-Key: `ssh-keygen -t ed25519 -C "max.mustermann@email-provider.com"`
   - Use the default path
   - Enter the password you want to use (optional)
   - Copy the public key: `cat ~/.ssh/id_ed25519.pub | clip.exe`
