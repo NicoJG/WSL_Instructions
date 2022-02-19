@@ -173,4 +173,29 @@ For Jupyter Notebook just replace every "Lab" with a "Notebook"
 - If the bug mentioned in https://github.com/jupyterlab/jupyterlab/issues/10413 will eventually be fixed use `c.ServerApp.use_redirect_file = False` in `~/.jupyter/jupyter_server_config.py`
 
 
+# Terminal Customizations
  
+The default terminal (Windows Terminal + Bash) is fine, but you can do so much more. 
+I like to use zsh with oh-my-zsh (https://github.com/ohmyzsh/ohmyzsh).
+ 
+## Installing Oh My Zsh
+ 
+- Install Zsh: `sudo apt install zsh`
+- Make Zsh your default shell: `chsh -s $(which zsh)` (restart the terminal)
+- Install OhMyZsh: `sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
+ 
+## Customize Windows Terminal
+ 
+- Choose a color scheme from https://windowsterminalthemes.dev/ 
+ - I like "Solarized Dark Higher Contrast" (https://windowsterminalthemes.dev/?theme=Solarized%20Dark%20Higher%20Contrast)
+ - Add the color scheme to Windows Terminal in the Settings
+ - Change the Ubuntu profile in the Windows Terminal Settings to use this color scheme
+- Install a "Nerd Font" from https://www.nerdfonts.com/font-downloads 
+ - I like "DejaVuSansMono NF"
+ - Set the Font for the Ubuntu profile in the Windows Terminal settings
+- change the "bellStyle" to "none" so that the error sound does not pop up all the time
+- change the background to black and transparent, and add a background image (for example https://en.wikipedia.org/wiki/Helix_Nebula#/media/File:NGC7293_(2004).jpg)
+
+
+
+Powerlevel10k or 9k
