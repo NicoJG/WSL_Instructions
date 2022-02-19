@@ -182,7 +182,9 @@ The default terminal (Windows Terminal + Bash) is fine, but you can do so much m
 I like to use zsh with oh-my-zsh (https://github.com/ohmyzsh/ohmyzsh). 
 Once it is configured properly it looks amazing and has man convenient tools.
 
-q## Customize Windows Terminal
+## Customize Windows Terminal
+
+To look good, you first have to customize Windows Terminal
  
 - Choose a color scheme from https://windowsterminalthemes.dev/ 
  - I like "Solarized Dark Higher Contrast" (https://windowsterminalthemes.dev/?theme=Solarized%20Dark%20Higher%20Contrast)
