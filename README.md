@@ -13,6 +13,7 @@ Preferably use Windows Terminal and Visual Studio Code for everything.
 ## WSL and Ubuntu
 
 - Open Windows Terminal (PowerShell) as an Administrator
+- enter `wsl --update`
 - enter `wsl --install -d Ubuntu`
 - after successfull completion, restart your computer
 - enter a username and password for the Ubuntu login
