@@ -250,6 +250,7 @@ But I really like Powerlevel10k.
 
 # Updating
 
+- WSL-Kernel(in PowerShell): `wsl --update`
 - most of it: `sudo apt update && sudo apt upgrade`
 - Anaconda: `conda update anaconda`
 - TexLive: `tlmgr update --self --all --reinstall-forcibly-removed`
