@@ -185,6 +185,8 @@ Once it is configured properly it looks amazing and has man convenient tools.
 
 ## Customize your terminal (Windows Terminal)
 
+![grafik](https://user-images.githubusercontent.com/55792255/155576082-10508edf-3e6c-4e9e-9200-e285da8407de.png)
+
 To look good, you first have to customize Windows Terminal
  
 - Choose a color scheme from https://windowsterminalthemes.dev/ 
