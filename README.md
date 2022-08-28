@@ -60,7 +60,24 @@ Recommended VS Code Extensions:
 - Visual Studio Live Share
 
 
-## Python (Scientific Python via Anaconda)
+## Python (Scientific Python via Miniconda with Mamba, recommended)
+
+- Download the Installer: `wget -O ~/Miniconda-Installer.sh https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh`
+- Install Miniconda via `bash ~/Miniconda-Installer.sh -b -p ~/.local/miniconda3`
+  - `-b` is for batch-mode so that the `~/.bashrc` does not get cluttered
+  - `-p` is to specify where Anaconda should be installed to
+- Remove the Installer: `rm ~/Miniconda-Installer.sh`
+- To automatically activate conda (i.e. Python) add the following lines at the end of you `~/.bashrc` or `~\.zshrc` file:
+  ```
+  # Python/Anaconda:
+  . "$HOME/.local/miniconda3/etc/profile.d/conda.sh"
+  conda activate
+  ```
+  - You could for example open it with `code ~/.bashrc`
+- Install Mamba: while conda is active do `conda install mamba -n base -c conda-forge`
+- Optional: Create a new environment with many useful packages: `conda create -n anaconda anaconda`
+  
+  ## Python (Scientific Python via Anaconda)
 
 - Go to https://www.anaconda.com/products/individual
 - Copy the link adress of the Linux(!) "64-Bit (x86) Installer"
