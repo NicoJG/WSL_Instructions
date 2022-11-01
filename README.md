@@ -165,7 +165,7 @@ You need a XServer.
 - Add the following to your `~/.bashrc`:
   ```
   # XServer/VcXsrv:
-  export DISPLAY=$(route.exe print | grep 0.0.0.0 | head -1 | awk '{print $4}'):0.0
+  export DISPLAY="$(route.exe print | grep 0.0.0.0 | head -1 | awk '{print $4}'):0.0"
   export XDG_RUNTIME_DIR="/tmp/vcxsrv"
   export LIBGL_ALWAYS_INDIRECT=1
   ```
