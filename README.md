@@ -77,7 +77,8 @@ Recommended VS Code Extensions:
 - Install Mamba: while conda is active do `conda install mamba -n base -c conda-forge`
 - Optional: Create a new environment with many useful packages: `mamba create -n anaconda anaconda`
   
-  ## Python (Scientific Python via Anaconda)
+  ## Python (Scientific Python via Anaconda, not recommended!)
+  The installation using Miniconda is more clean and offers faster updates and installations using mamba.
 
 - Go to https://www.anaconda.com/products/individual
 - Copy the link adress of the Linux(!) "64-Bit (x86) Installer"
