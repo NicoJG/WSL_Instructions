@@ -75,7 +75,7 @@ Recommended VS Code Extensions:
   ```
   - You could for example open it with `code ~/.bashrc`
 - Install Mamba: while conda is active do `conda install mamba -n base -c conda-forge`
-- Optional: Create a new environment with many useful packages: `mamba create -n anaconda anaconda`
+- Create a new environment with many useful packages: `mamba create -n anaconda anaconda`
   
   ## Python (Scientific Python via Anaconda, not recommended!)
   The installation using Miniconda is more clean and offers faster updates and installations using mamba.
