@@ -67,7 +67,7 @@ Recommended VS Code Extensions:
   - `-b` is for batch-mode so that the `~/.bashrc` does not get cluttered
   - `-p` is to specify where Anaconda should be installed to
 - Remove the Installer: `rm ~/Miniconda-Installer.sh`
-- To automatically activate conda (i.e. Python) add the following lines at the end of you `~/.bashrc` or `~\.zshrc` file:
+- To automatically activate conda (i.e. Python) add the following lines at the end of you `~/.bashrc` or `~/.zshrc` file:
   ```
   # Python/Anaconda:
   . "$HOME/.local/miniconda3/etc/profile.d/conda.sh"
