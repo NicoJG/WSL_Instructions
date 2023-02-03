@@ -226,11 +226,25 @@ To look good, you first have to customize Windows Terminal
  
 - Install Zsh: `sudo apt install zsh`
 - Make Zsh your default shell: `chsh -s $(which zsh)`
+  - If you dont have the permission for `chsh` put the commands at the end of this section into your `~/.bashrc`
 - Install OhMyZsh: `sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
 - restart the shell (by using `exec zsh`)
 - you need to copy all customizations you did to the `~/.bashrc` to `~/.zshrc`! Because the bashrc won't be run anymore.
 
 For a few tips and tricks on using Zsh: https://www.twilio.com/blog/zsh-tricks-to-blow-your-mind
+
+```
+if [ -z "${NOZSH}" ] && [ $TERM = "xterm" -o $TERM = "xterm-256color" -o $TERM = "screen" ] && type zsh &> /dev/null
+then
+    export SHELL=$(which zsh)
+    if [[ -o login ]]
+    then
+        exec zsh -l
+    else
+        exec zsh
+    fi
+fi
+```
 
 ## Styling Zsh with Powerlevel10k
 
