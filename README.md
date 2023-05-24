@@ -182,6 +182,10 @@ You need a XServer.
   }
   alias check_xsrv=open_vcxsrv
   ```
+  
+## GDB fix for Ubuntu 22
+
+https://github.com/microsoft/WSL/issues/8356
 
 ## Jupyter Lab/Jupyter Notebook on WSL
 
