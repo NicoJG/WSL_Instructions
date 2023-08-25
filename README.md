@@ -50,7 +50,7 @@ Recommended Settings (in VSCode->File->Preferences->Settings):
 Recommended VS Code Extensions:
 - Remote - WSL
 - Rainbow CSV
-- vscode-pdf
+- PDF preview (or vscode-pdf)
 - Python
 - C/C++
 - LaTeX Workshop (disable auto compile!)
