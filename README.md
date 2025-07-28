@@ -238,7 +238,9 @@ To look good, you first have to customize Windows Terminal
 For a few tips and tricks on using Zsh: https://www.twilio.com/blog/zsh-tricks-to-blow-your-mind
 
 ```
-if [ -z "${NOZSH}" ] && [ $TERM = "xterm" -o $TERM = "xterm-256color" -o $TERM = "screen" ] && type zsh &> /dev/null
+# start zsh automatically (but not in SLURM jobs)
+if [[ -z "${NOZSH}" ]] && [[ -z "${SLURM_JOB_ID}" ]] && type zsh &> /dev/null && \
+   ( [[ "$TERM" == "xterm" ]] || [[ "$TERM" == "xterm-256color" ]] || [[ "$TERM" == "screen" ]]  )
 then
     export SHELL=$(which zsh)
     if [[ -o login ]]
